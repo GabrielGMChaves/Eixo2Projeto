@@ -139,3 +139,11 @@ a{
     height: auto;
     border-radius: 10px;
 }
+#cabecalho {
+    text-align: left;
+    padding: 1%;
+    padding-left: 10%;
+    outline-style: dashed;
+    outline-color: var(--black);
+    outline-width: 2px;
+}
