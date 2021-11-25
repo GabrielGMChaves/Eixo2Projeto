@@ -1,12 +1,19 @@
-﻿<main class="login">
+﻿@model LoginRegisterPUC.Models.LoginModel
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/styleLogin.css" />
+</head>
+<main class="login">
     <div class="login__container container">
         <p>Efetue seu Login</p>
-        <form class="col login__form col-md-12 row align-items-center">
-            <input class="login__input" type="email" placeholder="E-mail" />
+        <form asp-action="Login" class="col login__form col-md-12 row align-items-center">
+            <input asp-for="Email" class="login__input" type="email" placeholder="E-mail" />
             <span class="login__input-border"></span>
-            <input class="login__input" type="password" placeholder="Senha" />
+            <input asp-for="Senha" class="login__input" type="password" placeholder="Senha" />
             <span class="login__input-border"></span>
-            <button class="login__submit">Login</button>
+            <button type="submit" class="login__submit">Login</button>
         </form>
         <a class="nav-link" href="Cadastro.html"> Quero me cadastrar</a>
     </div>

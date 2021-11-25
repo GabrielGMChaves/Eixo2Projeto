@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bielz\\source\\repos\\LoginRegisterPUC\\LoginRegisterPUC\\LoginRegisterPUC.csproj": {}
+    "C:\\Users\\bielz\\Documents\\GitHub\\Eixo2Projeto\\LoginRegisterPUC\\LoginRegisterPUC\\LoginRegisterPUC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bielz\\source\\repos\\LoginRegisterPUC\\LoginRegisterPUC\\LoginRegisterPUC.csproj": {
+    "C:\\Users\\bielz\\Documents\\GitHub\\Eixo2Projeto\\LoginRegisterPUC\\LoginRegisterPUC\\LoginRegisterPUC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bielz\\source\\repos\\LoginRegisterPUC\\LoginRegisterPUC\\LoginRegisterPUC.csproj",
+        "projectUniqueName": "C:\\Users\\bielz\\Documents\\GitHub\\Eixo2Projeto\\LoginRegisterPUC\\LoginRegisterPUC\\LoginRegisterPUC.csproj",
         "projectName": "LoginRegisterPUC",
-        "projectPath": "C:\\Users\\bielz\\source\\repos\\LoginRegisterPUC\\LoginRegisterPUC\\LoginRegisterPUC.csproj",
+        "projectPath": "C:\\Users\\bielz\\Documents\\GitHub\\Eixo2Projeto\\LoginRegisterPUC\\LoginRegisterPUC\\LoginRegisterPUC.csproj",
         "packagesPath": "C:\\Users\\bielz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bielz\\source\\repos\\LoginRegisterPUC\\LoginRegisterPUC\\obj\\",
+        "outputPath": "C:\\Users\\bielz\\Documents\\GitHub\\Eixo2Projeto\\LoginRegisterPUC\\LoginRegisterPUC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bielz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -43,6 +43,10 @@
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.12, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
             },
             "MySqlConnector": {
               "target": "Package",
