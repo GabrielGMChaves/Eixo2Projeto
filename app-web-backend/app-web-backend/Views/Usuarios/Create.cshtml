@@ -1,16 +1,16 @@
 ﻿@model app_web_backend.Models.Usuario
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Efetue o Registro";
 }
+<br /><div class="row">
+    <h1>Registre-se aqui!</h1> </div>
+<br />
 
-<h1>Create</h1>
-
-<h4>Usuario</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 login__container container">
         <form asp-action="Create">
+            <br />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Nome" class="control-label"></label>
@@ -28,14 +28,10 @@
                 <span asp-validation-for="Perfil" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <button type="submit" value="Registrar" class="btn btn-primary login__submit">Registrar</button>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

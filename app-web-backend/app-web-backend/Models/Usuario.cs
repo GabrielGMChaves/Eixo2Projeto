@@ -13,7 +13,7 @@ namespace app_web_backend.Models
         [Key]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Obrigatório informar o nome!")]
+        [Required(ErrorMessage = "Obrigatório informar o Email!")]
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar a senha!")]
