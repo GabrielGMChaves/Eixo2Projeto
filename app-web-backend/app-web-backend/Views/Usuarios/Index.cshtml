@@ -4,38 +4,43 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<head>
+    <link href="/css/styleMuralBabas.css" rel="stylesheet">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h3>Mural de Babás</h3>
+            @foreach (var item in Model)
+            {
+        <br /> <br />
+             <a a asp-action="Details" asp-route-id="@item.Id" style="color: black; text-decoration: none;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-4 order-first">
+                            <img src="/css/user.png" class="img-fluid img-thumbnail" alt="logo" style="border-radius:50%; min-width:">
+                        </div>
+                        <div class="col-8 order-last">
+                            <h3>@Html.DisplayFor(modelItem => item.Nome)</h3>
+                            <h3 style="max-width:100%; ">
+                                @Html.DisplayFor(modelItem => item.Descricao)
+                            </h3>
+                        </div>
+                    </div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Perfil)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Perfil)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+                </div>
+             </a>
+            }
+        </div>
+        <div class="col-6 order-last" id='map' style='border-radius: 3%; min-height: 100vh; min-width: 50vh;'></div>
+    </div>
+</div>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZ2FicmllbGdtY2hhdmVzIiwiYSI6ImNrdXkyOGw5YzJibXkyb29kNDJ4ZjM4cGUifQ.Mc6JtYS3ZSgxk9cLtiAGlw';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11'
+    });
+</script>

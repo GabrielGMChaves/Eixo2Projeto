@@ -65,11 +65,11 @@ namespace app_web_backend
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseCookiePolicy();
 
             app.UseAuthentication();
 
-            app.UseCookiePolicy();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Yw7Kim5zPYrOc3bVc+epmFCfCNdyLlLrMWUZZJFsmPdJNTJfTlofZrsQOr+ayxY2cyFLrc7vUYdGrCnRHcu3+Q==",
+  "dgSpecHash": "iFwrO2MHUzVxBKJjcToYRx8BBod8xiCB8lml/ZvbMsTL1ObzQx4k1Je7baud07in1UHEivE+KTCfodiZcm+6MA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bielz\\source\\repos\\app-web-backend\\app-web-backend\\app-web-backend.csproj",
+  "projectFilePath": "C:\\Users\\bielz\\Documents\\GitHub\\Eixo2Projeto\\app-web-backend\\app-web-backend\\app-web-backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bielz\\.nuget\\packages\\bcrypt.net-next\\4.0.2\\bcrypt.net-next.4.0.2.nupkg.sha512",
     "C:\\Users\\bielz\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

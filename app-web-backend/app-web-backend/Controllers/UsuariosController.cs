@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using app_web_backend.Models;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 
 namespace app_web_backend.Controllers
 {
+    [Authorize]
     public class UsuariosController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -20,27 +22,29 @@ namespace app_web_backend.Controllers
             _context = context;
         }
 
+        [AllowAnonymous]
         public IActionResult Login()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login([Bind("Id,Senha")] Usuario usuario)
+        [AllowAnonymous]
+        public async Task<IActionResult> Login([Bind("Email,Senha")] Usuario usuario)
         {
             var user = await _context.Usuarios
-                .FirstOrDefaultAsync(m => m.Id == usuario.Id);
+                .FirstOrDefaultAsync(m => m.Email == usuario.Email);
 
             if (user == null)
             {
-                ViewBag.Message = "Usuário e/ou senha inválidos!";
+                ViewBag.Message = "Usuário e/ou Senha inválidos!";
                 return View();
             }
+
             bool isSenhaOk = BCrypt.Net.BCrypt.Verify(usuario.Senha, user.Senha);
-            
+
             if (isSenhaOk)
             {
-
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, user.Nome),
@@ -57,19 +61,18 @@ namespace app_web_backend.Controllers
                     AllowRefresh = true,
                     ExpiresUtc = DateTime.Now.ToLocalTime().AddDays(7),
                     IsPersistent = true
-
                 };
 
                 await HttpContext.SignInAsync(principal, props);
 
                 return Redirect("/");
-
             }
 
-            ViewBag.Message = "Usuário e/ou senha inválidos!";
+            ViewBag.Message = "Usuário e/ou Senha inválidos!";
             return View();
         }
 
+        [AllowAnonymous]
         public IActionResult AccessDenied()
         {
             return View();
@@ -105,6 +108,7 @@ namespace app_web_backend.Controllers
         }
 
         // GET: Usuarios/Create
+        [AllowAnonymous]
         public IActionResult Create()
         {
             return View();
@@ -115,14 +119,26 @@ namespace app_web_backend.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Senha,Perfil")] Usuario usuario)
+        [AllowAnonymous]
+        public async Task<IActionResult> Create([Bind("Id,Nome,Email,Senha,Descricao,Cpf,Endereco,Telefone,Cep,Estado,Perfil")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
-                usuario.Senha = BCrypt.Net.BCrypt.HashPassword(usuario.Senha);
-                _context.Add(usuario);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                var ListaUsuariosDB = await _context.Usuarios.ToListAsync();
+                var UsuariosFiltradosEmail = ListaUsuariosDB.Where(user => user.Email == usuario.Email);
+
+                if (UsuariosFiltradosEmail.Any())
+                {
+                    ViewBag.Message = "E-mail já registrado!";
+                    return View(usuario);
+                }
+                else
+                {
+                    usuario.Senha = BCrypt.Net.BCrypt.HashPassword(usuario.Senha);
+                    _context.Add(usuario);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
             }
             return View(usuario);
         }
@@ -148,7 +164,7 @@ namespace app_web_backend.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Senha,Perfil")] Usuario usuario)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Email,Senha,Descricao,Cpf,Endereco,Telefone,Cep,Estado,Perfil")] Usuario usuario)
         {
             if (id != usuario.Id)
             {

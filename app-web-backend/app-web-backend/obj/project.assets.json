@@ -7297,11 +7297,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bielz\\source\\repos\\app-web-backend\\app-web-backend\\app-web-backend.csproj",
+      "projectUniqueName": "C:\\Users\\bielz\\Documents\\GitHub\\Eixo2Projeto\\app-web-backend\\app-web-backend\\app-web-backend.csproj",
       "projectName": "app-web-backend",
-      "projectPath": "C:\\Users\\bielz\\source\\repos\\app-web-backend\\app-web-backend\\app-web-backend.csproj",
+      "projectPath": "C:\\Users\\bielz\\Documents\\GitHub\\Eixo2Projeto\\app-web-backend\\app-web-backend\\app-web-backend.csproj",
       "packagesPath": "C:\\Users\\bielz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bielz\\source\\repos\\app-web-backend\\app-web-backend\\obj\\",
+      "outputPath": "C:\\Users\\bielz\\Documents\\GitHub\\Eixo2Projeto\\app-web-backend\\app-web-backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bielz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7375,7 +7375,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
