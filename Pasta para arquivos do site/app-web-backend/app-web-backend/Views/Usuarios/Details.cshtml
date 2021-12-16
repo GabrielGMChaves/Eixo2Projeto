@@ -1,0 +1,50 @@
+﻿@model app_web_backend.Models.Usuario
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<head>
+    <link href="/css/styleMuralBabas.css" rel="stylesheet">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+<div class="container">
+    <div class="row justify-content-between">
+        <div class="col-7" style="">
+            <h1 style="margin-top: 15px; margin-left: 5px;">
+                @Html.DisplayFor(model => model.Nome), @Html.DisplayFor(model => model.Perfil)
+            </h1>
+            <div class="row">
+                <div class="col-4" style="margin-top: 30px;">
+                    <div class="col" style="padding-right: 2px;">
+                        <img src="/css/user.png" class="img-fluid img-thumbnail" alt="logo" style="min-width: 150px; min-height: 150px; " x>
+                    </div>
+                </div>
+                <div class="col-7" style="margin-top: 30px; margin-left: 5px;">
+                    <h3 class="fs-6">
+                        @Html.DisplayFor(model => model.Descricao)
+                    </h3>
+                </div>
+            </div>
+            <div class='col-4'>
+                <h3 class="fs-6" style='margin-left: 5px;'>
+                    @Html.DisplayFor(model => model.Endereco),
+                    Telefone: @Html.DisplayFor(model => model.Telefone)
+                </h3>
+            </div>
+        </div>
+        <div class="col-5" id='map' style='border-radius: 3%; min-height: 100vh; min-width: 47vh;'>
+        </div>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZ2FicmllbGdtY2hhdmVzIiwiYSI6ImNrdXkyOGw5YzJibXkyb29kNDJ4ZjM4cGUifQ.Mc6JtYS3ZSgxk9cLtiAGlw';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11'
+    });
+</script>

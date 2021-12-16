@@ -1,0 +1,67 @@
+.sellingpoints{
+    justify-content: center;
+    text-align: center;
+    color: rgba(0,0,0,.55);
+    font-family: sans-serif;
+}
+
+.titulo{
+
+    justify-content: center;
+    text-align: center;
+    color: rgba(0,0,0,.55);
+    font-family: sans-serif;
+    
+
+}
+
+.row{
+    justify-content: center;
+    text-align: center;
+    color:rgba(0,0,0,.55);
+    margin: 10px;
+    padding: 10px;
+    font-family: sans-serif;
+
+}
+
+.footer{
+    
+    background: rgb(212,84,162);
+    background: linear-gradient(90deg, rgba(212,84,162,1) 0%, rgba(210,199,203,1) 58%);
+    font-family: sans-serif, rgba(0,0,0,.55);
+    
+    
+
+}
+
+.cabecalho{
+    
+    justify-content: right;
+    font-family: sans-serif;
+    text-align: right;
+
+}
+
+navbar navbar-expand-lg navbar-light bg-light{
+
+    
+    padding: 10px;
+    text-align: right;
+    justify-content: center;
+    font-family: sans-serif, 20px;
+}
+
+.pe{
+    font-family: sans-serif;
+    color:rgba(0,0,0,.55);
+    text-align: center;
+    justify-content: center;
+    padding: 3px;
+}
+
+container-fluid{
+    text-align: right;
+    justify-content: right;
+    justify-items: right;
+}
