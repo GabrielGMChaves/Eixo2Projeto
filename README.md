@@ -7,4 +7,4 @@ Documentação do projeto: https://sgapucminasbr.sharepoint.com/:w:/s/Turma4-Gru
 
 Site do projeto: https://deployprojeto.azurewebsites.net/
 
-Vídeo do projeto:https://www.youtube.com/watch?v=XQYstES_zLw
+Vídeo do projeto: https://www.youtube.com/watch?v=XQYstES_zLw
